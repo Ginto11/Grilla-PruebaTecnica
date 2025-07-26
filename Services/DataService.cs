@@ -5,6 +5,7 @@ namespace Grilla.Services
 {
     public class DataService
     {
+        // INYECCIÓN DE DEPENDENCIAS PARA LA CONFIGURACIÓN Y EL CLIENTE HTTP
         private readonly IConfiguration configuration;
         private readonly HttpClient httpClient;
 
@@ -16,21 +17,22 @@ namespace Grilla.Services
 
         public async Task<List<Item>?> GetDataAsync()
         {
-            // Obtener el token desde configuración
+            // OBTENER EL TOKEN DESDE LA CONFIGURACIÓN
             var token = configuration["Jwt:Token"];
 
-            // Configura HttpClient con el token Bearer
+            // CONFIGURAR EL CLIENTE HTTP CON EL TOKEN
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            // Hacer la solicitud GET
+            // SOLICITUD GET
             var response = await httpClient.GetAsync(configuration["Api:Url"]); // Cambia la URL por la real
 
-            // Lanzar excepción si falla
+            // LANZA LA EXCEPTION SI LA RESPUESTA NO ES EXITOSA
             response.EnsureSuccessStatusCode();
 
-            // Leer y deserializar los datos
+            // LEER EL CONTENIDO DE LA RESPUESTA
             var content = await response.Content.ReadAsStringAsync();
-            Console.Write(content);
+
+            // DESERIALIZAR EL CONTENIDO A UNA LISTA DE ITEMS
             var items = System.Text.Json.JsonSerializer.Deserialize<List<Item>>(content, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true

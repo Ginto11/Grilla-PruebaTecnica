@@ -54,6 +54,7 @@ Ejemplo de respuesta esperada:
 - 💼 Ver Portafolio
 
 - 📂 Ver Repositorio
+- 💻 Ver Producción
   
 Íconos implementados con Bootstrap Icons (locales).
 
@@ -64,9 +65,27 @@ Ejemplo de respuesta esperada:
 
 - Bootstrap 5
 
-- Bootstrap Icons (descargadas y alojadas localmente)
+- Bootstrap Icons
 
 - CSS personalizado
+
+## 🔍 SEO (Optimización para Motores de Búsqueda)
+
+Aunque Blazor WebAssembly es una tecnología SPA (Single Page Application) y su contenido se genera principalmente del lado del cliente, se han seguido buenas prácticas para mejorar la visibilidad y el posicionamiento en buscadores:
+
+- Uso de la etiqueta `<title>` personalizada en cada página mediante el componente `PageTitle`.
+- Inclusión de descripciones y metadatos relevantes en el archivo `Components/App.razor` para mejorar la indexación.
+- Estructura semántica en los encabezados y el contenido para facilitar la lectura por parte de los motores de búsqueda.
+- Uso de rutas amigables en la navegación.
+
+## ☁️ Despliegue en Heroku
+
+Puedes desplegar esta aplicación Blazor WebAssembly en Heroku como un sitio estatico, se requieren los siguientes pasos.
+
+1. Subir el proyecto a Github.
+2. Crear cuenta de `Heroku`.
+3. Crear nueva aplicacion e importar el repositorio por medio de `GitHub`.
+
 
 ## 🧪 Cómo ejecutar el proyecto
 1. Clonar el repositorio:
@@ -79,7 +98,6 @@ Asegúrate de que tengas instalado el SDK de .NET 8 o superior.
 
 ## 👨‍💻 Autor
 - Desarrollado por Nelson Muñoz
-- 📧 info@ziursoftware.com
 - 🕒 Enviado el: Julio 26 de 2025
 
 

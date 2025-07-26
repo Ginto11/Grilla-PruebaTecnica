@@ -22,6 +22,13 @@
 <h1>Practica de Prueba Técnica </h1>
 
 <div class="contenedor-cards">
+        <!-- Muestra un mensaje de error si ocurre -->
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <div class="error-message">@ErrorMessage</div>
+        }
+
+        <!-- Muestra los items obtenidos del servicio -->
         @if (Items != null && Items.Any())
         {
             @foreach (var item in Items)
@@ -36,18 +43,23 @@
 </div>
 
 @code {
+    // VARIABLES PARA ALMACENAR LOS DATOS
     private List<Item>? Items;
+    private string? ErrorMessage;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            // OBTENER LOS DATOS DEL SERVICIO
             Items = await dataService.GetDataAsync();
 
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error al obtener items: {ex.Message}");
+            // MANEJO DE ERRORES
+            ErrorMessage = $"Error al obtener items: {ex.Message}";
+        }
         }
     }
 

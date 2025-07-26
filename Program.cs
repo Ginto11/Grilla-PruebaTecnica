@@ -6,8 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
-builder.Services.AddScoped<DataService>();
+
+//AGREGA MI SERVICIO DATASERVICE
 builder.Services.AddHttpClient<DataService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
