@@ -1,0 +1,75 @@
+﻿<style>
+
+    .card {
+        width: 30%;
+        padding: 1rem;
+        height: 20rem;
+        background-color: #1E272E;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card * {
+        margin: 0;
+    }
+
+    .activo {
+        color: green;
+    }
+
+    .inactivo {
+        color: red;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .card p{
+        font-size: 1rem;
+    }
+
+    .card .contenedor-img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2F3640;
+        padding: 1rem;
+    }
+
+    .card .contenedor-img img {
+        width: 50%;
+    }
+
+    .card h4 {
+        font-size: 1.3rem;
+    }
+
+</style>
+
+<div class="card">
+    <div class="contenedor-img">
+        <img src="img/documento.png" alt="@AltImg" />
+    </div>
+    <h4>Código: <span>@Codigo</span></h4>
+    <p><strong>Descripción:</strong> @Descripcion</p>
+    <p><strong>Estado:</strong> <span class="@(Estado ? "activo" : "inactivo")">@(Estado ? "Activo" : "Inactivo")</span></p>
+</div>
+
+@code {
+
+    [Parameter]
+    public int Codigo { get; set; }
+
+    [Parameter]
+    public string? Descripcion { get; set; }
+
+    [Parameter]
+    public bool Estado { get; set; }
+
+    private string AltImg => $"Imagen {Descripcion}";
+
+}

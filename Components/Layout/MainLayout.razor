@@ -1,0 +1,52 @@
+﻿@inherits LayoutComponentBase
+
+<div class="contenedor">
+    <div class="estilos-sidebar">
+        <NavMenu />
+    </div>
+
+    <main class="contenido">
+        <article>
+            @Body
+        </article>
+    </main>
+</div>
+
+<style>
+
+    .contenedor{
+        display: flex;
+        height: 100vh;
+        background-color: #121212;
+    }
+
+    .estilos-sidebar {
+        background-color: #1D262C;
+        width: 20%;
+        height: 100vh;
+    }
+
+    .contenido{
+        width: 80%;
+        padding: 2rem;
+        font-size: 1.2rem;
+        background-color: #121212;
+        overflow-y: auto;
+    }
+
+    .contenido::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+    }
+
+    .contenido::-webkit-scrollbar-thumb {
+        background-color: #3498DB;
+        border-radius: 4px;
+    }
+
+    .contenido article {
+        color: #F5F6FA;
+    }
+
+</style>
+

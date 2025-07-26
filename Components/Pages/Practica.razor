@@ -1,0 +1,53 @@
+﻿@page "/practica"
+@using Grilla.models;
+@using Grilla.Components.Shared;
+@inject HttpClient Http
+
+
+<style>
+
+    .contenedor-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+</style>
+
+<PageTitle>Practica</PageTitle>
+<h1>Practica de Prueba Técnica </h1>
+
+<div class="contenedor-cards">
+        @if (Items != null && Items.Any())
+        {
+            @foreach (var item in Items)
+            {
+                <Card Codigo="@item.Codigo" Descripcion="@item.Descripcion" Estado="@item.Estado" ></Card>
+            }
+        }
+        else
+        {
+            <p>No hay items disponibles.</p>
+        }
+</div>
+
+@code {
+    private List<Item>? Items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Items = await Http.GetFromJsonAsync<List<Item>>("api/DocumentosFillsCombos");
+
+            Console.WriteLine($"Items obtenidos correctamente. {Items} ");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al obtener items: {ex.Message}");
+        }
+    }
+
+}

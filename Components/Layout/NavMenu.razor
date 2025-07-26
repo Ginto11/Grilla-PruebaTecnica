@@ -1,0 +1,112 @@
+﻿<div class="header-sidebar">
+    <a href="">Grilla</a>
+</div>
+
+<div class="contenedor-nav">
+    <nav>
+        <NavLink class="link" href="">
+            <span class="bi bi-house-fill"></span> Bienvenida
+        </NavLink>
+
+        <NavLink class="link" href="teoria" Match="NavLinkMatch.All">
+            <span class="bi bi-file-earmark-text-fill"></span> Prueba Teoria
+        </NavLink>
+
+        <NavLink class="link" href="practica">
+            <span class="bi bi-card-list"></span> Prueba Practica
+        </NavLink>
+
+        <a class="link" target="_blank" href="https://github.com/Ginto11">
+            <span class="bi bi-github"></span> Perfil de GitHub
+        </a>
+
+        <a class="link" target="_blank" href="https://portafolio-sigma-blue.vercel.app/">
+            <span class="bi bi-person-square"></span> Ver Portafolio
+        </a>
+
+        <a class="link" target="_blank" href="https://github.com/Ginto11/Grilla-PruebaTecnica">
+            <span class="bi bi-code-slash"></span> Ver Reposositorio
+        </a>
+    </nav>
+
+    <div class="footer-sidebar">
+        <p>© 2025 Nelson Muñoz</p>
+    </div>
+</div>
+
+
+<style>
+
+    .header-sidebar{
+        background-color: #0002;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px 2px #0009;
+    }
+
+    .header-sidebar a{
+        color: #3498DB;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .contenedor-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .contenedor-nav div {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: inherit;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav .link{
+        background-color: #FFF1;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        border-radius: 0.5rem;
+        color: #F5F6FA;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.7s ease;
+    }
+
+    nav .link:visited{
+        color: #F5F6FA;
+    }
+
+    nav .link:hover{
+        background-color: #3498DB;
+        box-shadow: 0 0 4px #000;
+        color:  #000;
+    }
+
+    nav .link:hover > span {
+        color: #000;
+        font-weight: bold;
+    }
+
+    nav .link span {
+        color: #FFF;
+        margin-left: 1rem;
+    }
+
+</style>
