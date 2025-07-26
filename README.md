@@ -34,12 +34,12 @@ Ejemplo de respuesta esperada:
 ```
 
 ## 🧩 Funcionalidades desarrolladas
-✅ Consumo de API con HttpClient y Bearer Token
-✅ Visualización en grilla de los datos obtenidos
-✅ Componente de navegación lateral con enlaces
-✅ Iconografía con Bootstrap Icons
-✅ Interfaz limpia y responsiva
-✅ Footer con derechos reservados
+- ✅ Consumo de API con HttpClient y Bearer Token
+- ✅ Visualización en grilla de los datos obtenidos
+- ✅ Componente de navegación lateral con enlaces
+- ✅ Iconografía con Bootstrap Icons
+- ✅ Interfaz limpia y responsiva
+- ✅ Footer con derechos reservados
 
 
 ## 📁 Estructura del menú lateral
