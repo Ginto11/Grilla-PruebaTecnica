@@ -1,16 +1,13 @@
 using Grilla.Components;
+using Grilla.Services;
 using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
-builder.Services.AddScoped(sp =>
-{
-    var client = new HttpClient { BaseAddress = new Uri("https://mainserver.ziursoftware.com/Ziur.API/basedatos_01/ZiurServiceRest.svc/") };
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "ae8bad44-7348-11ee-b962-0242ac120002");
-    return client;
-});
+builder.Services.AddScoped<DataService>();
+builder.Services.AddHttpClient<DataService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

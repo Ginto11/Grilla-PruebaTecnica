@@ -1,7 +1,9 @@
 ﻿@page "/practica"
 @using Grilla.models;
 @using Grilla.Components.Shared;
+@using Grilla.Services;
 @inject HttpClient Http
+@inject DataService dataService
 
 
 <style>
@@ -40,9 +42,8 @@
     {
         try
         {
-            Items = await Http.GetFromJsonAsync<List<Item>>("api/DocumentosFillsCombos");
+            Items = await dataService.GetDataAsync();
 
-            Console.WriteLine($"Items obtenidos correctamente. {Items} ");
         }
         catch (Exception ex)
         {
