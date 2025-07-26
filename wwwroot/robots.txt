@@ -1,0 +1,3 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://grilla-prueba-tecnica-2ac8bb0f55f5.herokuapp.com/sitemap.xml
